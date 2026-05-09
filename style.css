@@ -1,0 +1,30 @@
+body{
+  margin:0;
+  overflow:hidden;
+  background:black;
+  font-family:Arial;
+}
+
+#gameUI{
+  position:absolute;
+  width:100%;
+  text-align:center;
+  color:white;
+  z-index:2;
+}
+
+h1{
+  margin-top:10px;
+  color:#ffe066;
+  text-shadow:0 0 10px black;
+}
+
+#mission{
+  font-size:24px;
+  margin-top:10px;
+}
+
+canvas{
+  display:block;
+  background:linear-gradient(#041c3c,#0a4d68,#57c5b6);
+}
