@@ -1,27 +1,30 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+const playerImage = new Image();
+playerImage.src = "peterpan.png";
+
 const keys = {};
 
-document.addEventListener("keydown",e=>{
+document.addEventListener("keydown", (e) => {
   keys[e.key] = true;
 });
 
-document.addEventListener("keyup",e=>{
+document.addEventListener("keyup", (e) => {
   keys[e.key] = false;
 });
 
 const player = {
-  x:200,
-  y:300,
-  width:70,
-  height:90,
-  speed:6
+  x: 200,
+  y: 300,
+  width: 120,
+  height: 140,
+  speed: 6
 };
 
 const tinkerbell = {
-  x:-40,
-  y:-40
+  x: -40,
+  y: -40
 };
 
 const lostKids = [
@@ -153,28 +156,13 @@ function drawNeverland(){
 
 function drawPlayer(){
 
-  ctx.fillStyle = "#5cff5c";
-
-  ctx.fillRect(
+  ctx.drawImage(
+    playerImage,
     player.x-cameraX,
     player.y,
-    70,
-    90
+    player.width,
+    player.height
   );
-
-  ctx.fillStyle = "#ffd6a5";
-
-  ctx.beginPath();
-
-  ctx.arc(
-    player.x+35-cameraX,
-    player.y-25,
-    28,
-    0,
-    Math.PI*2
-  );
-
-  ctx.fill();
 
   ctx.fillStyle = "yellow";
 
